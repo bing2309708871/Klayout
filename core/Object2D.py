@@ -18,7 +18,7 @@ class Object2D(object):
     # 执行整个图形块的移动、旋转、放大、对称操作
     def move(self, Direction):
         for object in self.getDescendantList():
-            object.set_translate(Direction[0],Direction[1])
+            object.set_translate(Direction[0],Direction[1],localCoord=False)
 
     def rotate(self,angle):
         for object in self.getDescendantList():
@@ -26,7 +26,7 @@ class Object2D(object):
 
     def scale(self,s):
         for object in self.getDescendantList():
-            object.set_scale(s)
+            object.set_scale(s,localCoord=False)
 
     def sysmetric(self,sysmetric='X'):
         for object in self.getDescendantList():
